@@ -8,7 +8,7 @@ load_dotenv()
 #Passo 2 - Instanciar conexão
 
 #Credenciais de acesso ao servidor
-BROKER = os.getenv("BROKER") #177.8.167.89" - IP EXTERNO
+BROKER = os.getenv("BROKER")
 PORT = 7500
 USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
