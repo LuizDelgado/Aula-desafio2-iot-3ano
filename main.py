@@ -1,14 +1,17 @@
 #Passo 1 - Importar as bibliotecas
 import paho.mqtt.client as mqtt #Biblioteca do protocolo MQTT
 import time #Biblioteca responsável pelos "delays" do código
+import os 
+from dotenv import load_dotenv
+load_dotenv()
 
 #Passo 2 - Instanciar conexão
 
 #Credenciais de acesso ao servidor
-BROKER = "192.168.2.102" #177.8.167.89" - IP EXTERNO
+BROKER = os.getenv("BROKER") #177.8.167.89" - IP EXTERNO
 PORT = 7500
-USERNAME = "planta40mqttlogin"
-PASSWORD = "gatoehfofoplanta40eniac"
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
 TOPIC = "aula_iot_show"
 CLIENT_ID = "Prof Little Luiz"
 
@@ -37,4 +40,3 @@ client.publish(TOPIC, "Oi gente, me conectei!")
 
 if __name__ == '__main__':
     client.loop_forever()
-    
